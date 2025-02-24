@@ -1,0 +1,268 @@
+/* Root container: 100% width & centered */
+.layoutContainer {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    color: #333;
+    background: #fff;
+    width: 100%;
+    height: 99vh;
+    /* Reduced height */
+}
+
+/* Sidebar: Fixed at 35% */
+.sidebar {
+    flex: 0 0 35%;
+    background-color: #222;
+    color: white;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sidebarContent h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: #ff85a2;
+}
+
+.contactInfo {
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+.contactInfo p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.contactInfo p:last-child {
+    font-weight: bold;
+    color: #ff85a2;
+}
+
+/* Social Icons */
+
+.socialIcons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialIcons a {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+    background: #ddd;
+}
+
+.socialIcons svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    transition: fill 0.3s ease-in-out;
+}
+
+.socialIcons a:hover svg {
+    fill: #c12b72;
+}
+
+/* Form Section: Fixed at 65% */
+.formSection {
+    flex: 0 0 65%;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #ffebf3, #ffd6e7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.formSection p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* Toggle Buttons */
+.formToggleButtons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #d33b80;
+    border-radius: 6px;
+    color: #d33b80;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.toggleButton:hover {
+    background-color: #d33b80;
+    color: white;
+    transform: scale(1.05);
+}
+
+.active {
+    background-color: #d33b80;
+    color: white;
+}
+
+/* Form container */
+form {
+    max-width: 500px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Booking Section: Two-column layout */
+.bookingGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+/* Full-width input */
+.fullWidth {
+    grid-column: span 2;
+}
+
+/* Form Inputs */
+.formGroup {
+    margin-bottom: 1rem;
+    /* Reduced gap */
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #222;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    background: white;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    border-color: #d33b80;
+    outline: none;
+    transform: scale(1.02);
+}
+
+.submitBtn {
+    background-color: #d33b80;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+
+
+.submitBtn:hover {
+    background-color: #c12b72;
+    transform: scale(1.05);
+}
+
+/* Response Message */
+.responseMessage {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .layoutContainer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        flex: none;
+        width: 100%;
+        border-bottom: 2px solid #ff85a2;
+    }
+
+    .formSection {
+        flex: none;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .bookingGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fullWidth {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .formToggleButtons {
+        flex-direction: row;
+    }
+
+    .toggleButton {
+        width: 100%;
+    }
+
+    .formSection h2 {
+        font-size: 1.6rem;
+    }
+}

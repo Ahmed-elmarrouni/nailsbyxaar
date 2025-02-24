@@ -1,0 +1,145 @@
+/* Footer Container */
+.footer {
+    background-color: #FFFAF5;
+    /* Soft, warm background */
+    color: #374151;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Top Bar: Social Section */
+.topBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.connectText {
+    font-size: 0.9rem;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Enhanced Icon Design */
+.icon {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: none;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #D33B80;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(211, 59, 128, 0.2);
+}
+
+.icon:hover {
+    background-color: #D33B80;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(211, 59, 128, 0.3);
+}
+
+.bottomBar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.section {
+    line-height: 1.6;
+}
+
+.title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #D33B80;
+    /* Use pink for section titles */
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list li a {
+    text-decoration: none;
+    color: #D33B80;
+    transition: color 0.3s ease;
+}
+
+.list li a:hover {
+    color: #f30771;
+    /* Brighter pink on hover */
+}
+
+/* Contact Section */
+.contactList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.contactList li a {
+    text-decoration: none;
+    color: #D33B80;
+    transition: color 0.3s ease;
+}
+
+.contactList li a:hover {
+    color: #f30771;
+}
+
+/* Copyright */
+.copyRight {
+    text-align: center;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.85rem;
+}
+
+.copyLink {
+    margin-left: 4px;
+    font-size: .9rem;
+    color: #92526f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyLink:hover {
+    color: #f30771;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .footer {
+        text-align: center;
+    }
+
+    .socialIcons {
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 auto;
+    }
+
+    .topBar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,218 @@
+.container {
+    display: flex;
+    position: relative;
+    margin-top: 4rem;
+    max-width: 98%;
+    gap: 5%;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #f4b400;
+    border-radius: 50%;
+    top: -50px;
+    left: 8%;
+    transform: translateX(-50%);
+    opacity: 0.2;
+    z-index: 2;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    background: #333;
+    border-radius: 50%;
+    bottom: -1rem;
+    left: 1.5rem;
+    opacity: 0.1;
+}
+
+/* Left container */
+.content {
+    position: relative;
+    z-index: 3;
+    width: 70%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Right container */
+.imageWrapper {
+    position: relative;
+    width: 35%;
+    z-index: 3;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+/* Images */
+.productImage {
+    width: 35%;
+    height: 30rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 6rem;
+    left: 8rem;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+    border: 5px solid pink;
+}
+
+.modelImage {
+    width: 100%;
+    height: 35rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 20px rgba(255, 182, 193, 0.5);
+}
+
+.img1 {
+    position: absolute;
+    height: 12rem;
+    width: 12rem;
+    bottom: -3rem;
+    left: -15%;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+    border: 5px solid pink;
+}
+
+
+
+/* Headings, text, and button */
+.heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.subText {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.browseButton {
+    padding: 10px 20px;
+    border: 1px solid #D33B80;
+    background: transparent;
+    cursor: pointer;
+    width: 13rem;
+    height: 3rem;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #D33B80;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.browseButton:hover {
+    background-color: #D33B80;
+    border-color: #D33B80;
+    color: #fff;
+}
+
+
+/* ============ Responsive: stack columns on smaller screens ============ */
+
+/* Tablet-ish screens */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content,
+    .imageWrapper {
+        width: 100%;
+    }
+
+    /* Adjust the absolute .productImage so it doesn't overlap text */
+    .productImage {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 1rem auto;
+        display: block;
+    }
+
+    .modelImage {
+        margin-top: 1.5rem;
+        height: auto;
+        /* let it scale automatically */
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .subText {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .browseButton {
+        width: 10rem;
+        height: 2.5rem;
+        margin: 0 auto;
+    }
+
+    /* Make sure the product image is not too large */
+    .productImage {
+        width: 12rem;
+        height: 16rem;
+    }
+}
+
+/* Very small mobile screens */
+@media screen and (max-width: 480px) {
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .subText {
+        font-size: 0.9rem;
+    }
+
+    .browseButton {
+        width: 9rem;
+        height: 2.2rem;
+    }
+
+    /* Keep image proportionate */
+    .productImage {
+        width: 10rem;
+        height: 14rem;
+    }
+
+    .modelImage {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Optional: reorder content and images if desired */
+    .content {
+        order: 2;
+    }
+
+    .imageWrapper {
+        order: 1;
+    }
+}

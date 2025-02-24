@@ -1,0 +1,235 @@
+/* Root Container */
+.aboutContainer {
+    position: relative;
+    width: 100%;
+    /* height: 95vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ffe1f0, #ffb6c1);
+    overflow: hidden;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+/* Floating Abstract Shapes */
+.shape {
+    position: absolute;
+    opacity: 0.18;
+    z-index: 1;
+    filter: blur(40px);
+}
+
+/* Unique Shapes & Positions */
+
+.shape2 {
+    width: 180px;
+    height: 180px;
+    background: #ff8c00;
+    border-radius: 50%;
+    bottom: 10%;
+    right: 12%;
+    animation: float2 5s infinite ease-in-out alternate;
+}
+
+.shape3 {
+    width: 250px;
+    height: 250px;
+    background: #b1197989;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    top: 20%;
+    left: 0%;
+    animation: float3 6s infinite ease-in-out;
+}
+
+.shape4 {
+    width: 220px;
+    height: 220px;
+    background: #ff4500;
+    border-radius: 50%;
+    bottom: -60px;
+    left: 10%;
+    animation: float4 7s infinite ease-in-out;
+}
+
+.shape5 {
+    width: 230px;
+    height: 230px;
+    background: #ff1493;
+    /* background: #ff1493; */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    top: 15%;
+    right: 5%;
+    animation: float5 6s infinite ease-in-out;
+}
+
+/* Floating Animations */
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes float4 {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes float5 {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+/* Content Section */
+.aboutContent {
+    z-index: 2;
+    max-width: 780px;
+    background: white;
+    padding: 3rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Profile Image - Fun, Lovely Frame */
+.imageWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.imageFrame {
+    /* width: 180px;
+    height: 180px; */
+    width: 15rem;
+    height: 20rem;
+    position: relative;
+    margin-left: -63rem;
+    top: -4rem;
+    border: 6px dashed #ff69b4;
+    /* border-radius: 50%; */
+    padding: 8px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(-9deg);
+}
+
+.profileImage {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 50%; */
+    object-fit: cover;
+}
+
+/* Paragraph */
+.paragraph {
+    margin-top: -19rem;
+}
+
+/* Title */
+.title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #d33b80;
+    margin-bottom: 1rem;
+}
+
+/* Description */
+.description {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+/* Info Cards */
+.infoCards {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+
+.card {
+    flex: 1;
+    background: #fff;
+    padding: 1.8rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+/* CTA Button */
+.ctaButton {
+    margin-top: 2.5rem;
+    background: #d33b80;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    background: #b32269;
+    transform: scale(1.07);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .infoCards {
+        flex-direction: column;
+    }
+}

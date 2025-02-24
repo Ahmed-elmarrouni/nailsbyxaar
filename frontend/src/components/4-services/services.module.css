@@ -1,0 +1,97 @@
+.pricingContainer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5rem;
+}
+
+.pricingCards {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.card {
+    background: #ffe6f0;
+    padding: 35px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.3);
+}
+
+.cardTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff69b4;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff1493;
+    margin-top: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features li {
+    font-size: 14px;
+    padding: 6px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.button {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    transform: scale(1.05);
+}
+
+/* Elevate middle card */
+.businessCard {
+    border: 3px solid #ff1493;
+    transform: translateY(-25px);
+}
