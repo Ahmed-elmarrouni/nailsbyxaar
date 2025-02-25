@@ -1,209 +1,149 @@
-import React, { Component, createRef } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.css";
+import { useLanguage } from "../../contexts/LanguageContext";
+
 import enFlag from "../../../public/flags/en.png";
 import nlFlag from "../../../public/flags/nl.png";
 import frFlag from "../../../public/flags/fr.png";
 import logo from "../../../public/logo/logo.png";
 
-class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            language: "NL",
-            isLanguageMenuOpen: false,
-            isMenuOpen: false,
-            isMobile: window.innerWidth <= 1024,
-        };
-        this.languageMenuRef = createRef();
-    }
+const languageFlags = {
+    EN: enFlag,
+    NL: nlFlag,
+    FR: frFlag,
+};
 
-    componentDidMount() {
-        document.addEventListener("mousemove", this.handleMouseMove);
-        window.addEventListener("resize", this.handleResize);
-    }
+const Navbar = () => {
+    const { translations, setLanguageHandler } = useLanguage();
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
+    const [selectedFlag, setSelectedFlag] = useState(languageFlags.NL);
 
-    componentWillUnmount() {
-        document.removeEventListener("mousemove", this.handleMouseMove);
-        window.removeEventListener("resize", this.handleResize);
-    }
+    // Handle screen resize
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-    handleResize = () => {
-        this.setState({ isMobile: window.innerWidth <= 1024 });
+    // Function to change language and update the flag
+    const handleLanguageChange = (lang) => {
+        setLanguageHandler(lang);
+        setSelectedFlag(languageFlags[lang]); // Update the flag
+        setIsLanguageMenuOpen(false); // Close dropdown after selection
     };
 
-    handleMouseMove = (event) => {
-        if (
-            this.languageMenuRef.current &&
-            !this.languageMenuRef.current.contains(event.target)
-        ) {
-            this.setState({ isLanguageMenuOpen: false });
-        }
-    };
-
-    toggleLanguageMenu = () => {
-        this.setState((prevState) => ({
-            isLanguageMenuOpen: !prevState.isLanguageMenuOpen,
-        }));
-    };
-
-    setLanguage = (lang) => {
-        this.setState({ language: lang });
-    };
-
-    toggleMenu = () => {
-        this.setState((prevState) => ({
-            isMenuOpen: !prevState.isMenuOpen,
-        }));
-    };
-
-    render() {
-        return (
-            <nav className={styles.navbar}>
-                <div className={styles.container}>
-                    {/* Left Section: Brand */}
-                    <div className={styles.brandSection}>
-                        <img src={logo} alt="NailsbyXaar" className={styles.logo} />
-                        <span className={styles.brandName}>NailsbyXaar</span>
-                    </div>
-
-                    {/* Center Section: Menu */}
-                    {!this.state.isMobile && (
-                        <div className={styles.menu}>
-                            <a href="#home">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#services">Services</a>
-                            <a href="#contact">Contact</a>
-                        </div>
-                    )}
-
-                    {/* Right Section: Language Selector */}
-                    {!this.state.isMobile && (
-                        <div
-                            className={styles.languageSelector}
-                            ref={this.languageMenuRef}
-                        >
-                            <button
-                                className={styles.languageButton}
-                                onClick={this.toggleLanguageMenu}
-                            >Lang
-                                <img
-                                    src={
-                                        this.state.language === "EN"
-                                            ? enFlag
-                                            : this.state.language === "NL"
-                                                ? nlFlag
-                                                : frFlag
-                                    }
-                                    alt={this.state.language}
-                                    className={styles.languageIcon}
-                                />
-                            </button>
-                            {this.state.isLanguageMenuOpen && (
-                                <div className={styles.languageMenu}>
-                                    <button onClick={() => this.setLanguage("NL")}>
-                                        <img
-                                            src={nlFlag}
-                                            alt="Dutch"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        NL
-                                    </button>
-                                    <button onClick={() => this.setLanguage("EN")}>
-                                        <img
-                                            src={enFlag}
-                                            alt="English"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        EN
-                                    </button>
-                                    <button onClick={() => this.setLanguage("FR")}>
-                                        <img
-                                            src={frFlag}
-                                            alt="French"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        FR
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    )}
-
-                    {this.state.isMobile && (
-                        <button className={styles.burgerMenu} onClick={this.toggleMenu}>
-                            <span className="material-icons">
-                                {this.state.isMenuOpen ? "close" : "menu"}
-                            </span>
-                        </button>
-                    )}
+    return (
+        <nav className={styles.navbar}>
+            <div className={styles.container}>
+                {/* Left Section: Brand */}
+                <div className={styles.brandSection}>
+                    <img src={logo} alt="NailsbyXaar" className={styles.logo} />
+                    <span className={styles.brandName}>NailsbyXaar</span>
                 </div>
 
-                {/* Mobile Menu */}
-                {this.state.isMobile && this.state.isMenuOpen && (
-                    <div className={styles.mobileMenu}>
-                        <a href="#home" onClick={this.toggleMenu}>Home</a>
-                        <a href="#about" onClick={this.toggleMenu}>About</a>
-                        <a href="#services" onClick={this.toggleMenu}>Services</a>
-                        <a href="#contact" onClick={this.toggleMenu}>Contact</a>
-                        <div
-                            className={styles.languageSelector}
-                            ref={this.languageMenuRef}
-                        >
-                            <button
-                                className={styles.languageButton}
-                                onClick={this.toggleLanguageMenu}
-                            >
-                                language{" "}
-                                <img
-                                    src={
-                                        this.state.language === "EN"
-                                            ? enFlag
-                                            : this.state.language === "NL"
-                                                ? nlFlag
-                                                : frFlag
-                                    }
-                                    alt={this.state.language}
-                                    className={styles.languageIcon}
-                                />
-                            </button>
-                            {this.state.isLanguageMenuOpen && (
-                                <div className={styles.languageMenu}>
-
-                                    <button onClick={() => { this.setLanguage("NL"); this.toggleMenu(); }}>
-                                        <img
-                                            src={nlFlag}
-                                            alt="Dutch"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        NL
-                                    </button>
-
-                                    <button onClick={() => { this.setLanguage("EN"); this.toggleMenu(); }}>
-                                        <img
-                                            src={enFlag}
-                                            alt="English"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        EN
-                                    </button>
-
-                                    <button onClick={() => { this.setLanguage("FR"); this.toggleMenu(); }}>
-                                        <img
-                                            src={frFlag}
-                                            alt="French"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        FR
-                                    </button>
-                                </div>
-                            )}
-                        </div>
+                {/* Center Section: Menu */}
+                {!isMobile && (
+                    <div className={styles.menu}>
+                        <a href="#home">{translations.navbar.home}</a>
+                        <a href="#about">{translations.navbar.about}</a>
+                        <a href="#services">{translations.navbar.services}</a>
+                        <a href="#work">{translations.navbar.work}</a>
+                        <a href="#reviews">{translations.navbar.reviews}</a>
+                        <a href="#contact">{translations.navbar.contact}</a>
                     </div>
                 )}
 
-            </nav>
-        );
-    }
-}
+                {/* Right Section: Language Selector */}
+                {!isMobile && (
+                    <div
+                        className={styles.languageSelector}
+                        onMouseLeave={() => setIsLanguageMenuOpen(false)}
+                    >
+                        <button
+                            className={styles.languageButton}
+                            onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+                        >
+                            <img src={selectedFlag} alt="Language" className={styles.languageIcon} />
+                            Language
+                        </button>
+                        {isLanguageMenuOpen && (
+                            <div className={styles.languageMenu}>
+                                <button onClick={() => handleLanguageChange("NL")}>
+                                    <img src={nlFlag} alt="Dutch" className={styles.languageIcon} /> NL
+                                </button>
+                                <button onClick={() => handleLanguageChange("EN")}>
+                                    <img src={enFlag} alt="English" className={styles.languageIcon} /> EN
+                                </button>
+                                <button onClick={() => handleLanguageChange("FR")}>
+                                    <img src={frFlag} alt="French" className={styles.languageIcon} /> FR
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Mobile Burger Menu */}
+                {isMobile && (
+                    <button className={styles.burgerMenu} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        <span className="material-icons">
+                            {isMenuOpen ? "close" : "menu"}
+                        </span>
+                    </button>
+                )}
+            </div>
+
+            {/* Mobile Menu */}
+            {isMobile && isMenuOpen && (
+                <div className={styles.mobileMenu}>
+                    <a href="#home" onClick={() => setIsMenuOpen(false)}>
+                        {translations.navbar.home}
+                    </a>
+                    <a href="#about" onClick={() => setIsMenuOpen(false)}>
+                        {translations.navbar.about}
+                    </a>
+                    <a href="#services" onClick={() => setIsMenuOpen(false)}>
+                        {translations.navbar.services}
+                    </a>
+                    <a href="#work" onClick={() => setIsMenuOpen(false)}>
+                        {translations.navbar.work}
+                    </a>
+                    <a href="#reviews" onClick={() => setIsMenuOpen(false)}>
+                        {translations.navbar.reviews}
+                    </a>
+                    <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                        {translations.navbar.contact}
+                    </a>
+                    <div
+                        className={styles.languageSelector}
+                        onMouseLeave={() => setIsLanguageMenuOpen(false)} // Close when cursor leaves
+                    >
+                        <button
+                            className={styles.languageButton}
+                            onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+                        >
+                            <img src={selectedFlag} alt="Language" className={styles.languageIcon} />
+                            Language
+                        </button>
+                        {isLanguageMenuOpen && (
+                            <div className={styles.languageMenu}>
+                                <button onClick={() => handleLanguageChange("NL")}>
+                                    <img src={nlFlag} alt="Dutch" className={styles.languageIcon} /> NL
+                                </button>
+                                <button onClick={() => handleLanguageChange("EN")}>
+                                    <img src={enFlag} alt="English" className={styles.languageIcon} /> EN
+                                </button>
+                                <button onClick={() => handleLanguageChange("FR")}>
+                                    <img src={frFlag} alt="French" className={styles.languageIcon} /> FR
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
+};
 
 export default Navbar;

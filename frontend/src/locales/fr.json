@@ -1,0 +1,124 @@
+{
+    "navbar": {
+        "home": "Accueil",
+        "about": "À propos",
+        "services": "Services",
+        "work": "Travail",
+        "reviews": "Avis",
+        "contact": "Contact"
+    },
+    "main": {
+        "productAlt": "Produit naturel",
+        "heading": "Élevez vos ongles avec l'art de la beauté et de la créativité.",
+        "subText": "Des designs premium créés avec passion et soin.",
+        "browseButton": "Explorez notre savoir-faire"
+    },
+    "about": {
+        "profileAlt": "Nails by Xaar",
+        "title": "Rencontrez Nails by Xaar 🎨",
+        "description": "Hey ! Je suis Xaartje, 19 ans, styliste ongulaire à Blankenberge (8370). Je travaille à domicile ainsi que chez mes clients, tout en étudiant pour obtenir mon diplôme de styliste ongulaire. J'aime expérimenter l'art des ongles et j'élargis constamment ma collection de couleurs en utilisant uniquement des produits de haute qualité.",
+        "cards": [
+            {
+                "icon": "✨",
+                "title": "Art & Créativité",
+                "text": "Chaque design est une œuvre d'art personnalisée et faite à la main."
+            },
+            {
+                "icon": "🌟",
+                "title": "Luxe & Style",
+                "text": "Des services de manucure haut de gamme pour vous garder tendance."
+            },
+            {
+                "icon": "💅",
+                "title": "Toucher Signature",
+                "text": "Des designs esthétiques et audacieux conçus spécialement pour vous."
+            }
+        ]
+    },
+    "services": {
+        "title": "Nos Tarifs",
+        "subtitle": "Choisissez le design parfait pour vous. Tarification simple, pas de frais cachés.",
+        "bookNow": "Réserver",
+        "title_a": "Gel avec Couleur",
+        "price_a": "€25",
+        "description_a": "Un gel lisse et durable avec votre couleur préférée.",
+        "features_a": [
+            "Gel de haute qualité",
+            "Finition brillante et durable",
+            "Séchage rapide sous lampe UV",
+            "Convient aux ongles naturels et en acrylique"
+        ],
+        "title_b": "French Tips",
+        "price_b": "€25",
+        "description_b": "Des ongles French tip classiques et élégants pour un look raffiné.",
+        "features_b": [
+            "Manucure French intemporelle",
+            "Parfait pour toutes les occasions",
+            "Finition propre et professionnelle",
+            "Disponible en différentes longueurs et formes"
+        ],
+        "title_c": "Designs & Extras",
+        "price_c": "€30",
+        "description_c": "Art des ongles créatif avec gel 3D, pierres, chrome et plus encore.",
+        "features_c": [
+            "Dessins uniques peints à la main",
+            "Effets pailletés, marbrés, ombrés",
+            "Gel 3D, pierres, chrome (supplément: +€2)",
+            "Nail art personnalisé pour événements spéciaux"
+        ]
+    },
+    "work": {
+        "subTitle": "MON TRAVAIL",
+        "title": "Des designs d'ongles époustouflants créés avec précision et créativité"
+    },
+    "reviews": {
+        "heading": "Construire ma passion pour l'art des ongles, un set à la fois!",
+        "subheading": "En tant que styliste ongulaire débutante, je suis déterminée à améliorer mes compétences et à créer de magnifiques designs. Découvrez ce que mes premiers clients disent de leur expérience!",
+        "highlights": [
+            "Très apprécié par nos clients",
+            "Approuvé par de nombreux clients pour la qualité & créativité",
+            "Avis positifs constants de nos clientes"
+        ],
+        "clients": [
+            {
+                "name": "Lars De Smet",
+                "review": "J'ai eu une expérience formidable ! Elle a pris son temps avec mes ongles et s'est assurée que j'étais satisfaite du résultat. Je reviendrai certainement!"
+            },
+            {
+                "name": "Sophie Van den Broeck",
+                "review": "Super gentille et patiente ! Mes ongles sont magnifiques et j'adore le design. J'ai hâte de mon prochain rendez-vous!"
+            },
+            {
+                "name": "Emma Claes",
+                "review": "J'ai essayé son service de manucure pour la première fois et j'ai été vraiment impressionnée. Elle est encore en apprentissage, mais l'effort et le soin qu'elle y met sont remarquables!"
+            }
+        ]
+    },
+    "footer": {
+        "stayConnected": "Restez connecté et suivez-moi sur les réseaux sociaux pour les dernières tendances ongulaires:",
+        "description": "Découvrez un art des ongles exquis et des services de beauté adaptés à vous. Élevez votre style avec nos designs créatifs et de haute qualité.",
+        "products": {
+            "title": "Produits",
+            "items": [
+                "Angular",
+                "React",
+                "Vue"
+            ]
+        },
+        "usefulLinks": {
+            "title": "Liens Utiles",
+            "items": [
+                "Tarifs",
+                "Paramètres",
+                "Commandes"
+            ]
+        },
+        "contact": {
+            "title": "Contact",
+            "address": "Maroc, Tétouan",
+            "email": "info@example.com",
+            "phone": "+ 01 234 567 88"
+        },
+        "createdBy": "Créé par"
+    }
+}

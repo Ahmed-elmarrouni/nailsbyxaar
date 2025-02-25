@@ -1,0 +1,124 @@
+{
+    "navbar": {
+        "home": "Huis",
+        "about": "Over",
+        "services": "Diensten",
+        "work": "Werk",
+        "reviews": "Recensies",
+        "contact": "Contact"
+    },
+    "main": {
+        "productAlt": "Natuurlijk product",
+        "heading": "Verhef je nagels met de kunst van schoonheid en creativiteit.",
+        "subText": "Premium ontwerpen met passie en zorg gemaakt.",
+        "browseButton": "Blader door ons vakmanschap"
+    },
+    "about": {
+        "profileAlt": "Nails by Xaar",
+        "title": "Ontmoet Nails by Xaar 🎨",
+        "description": "Hey! Ik ben Xaartje, 19 jaar oud en werkzaam als nagelstyliste in Blankenberge (8370). Ik werk zowel vanuit huis als bij klanten thuis en studeer momenteel voor mijn nageldiploma. Ik experimenteer graag met creatieve nail art en breid voortdurend mijn collectie kleuren uit, waarbij ik uitsluitend kwaliteitsproducten gebruik.",
+        "cards": [
+            {
+                "icon": "✨",
+                "title": "Kunst & Creativiteit",
+                "text": "Elk ontwerp is een uniek, met de hand gemaakt kunstwerk."
+            },
+            {
+                "icon": "🌟",
+                "title": "Luxe & Stijl",
+                "text": "Premium nagelservices die je een trendsetter maken."
+            },
+            {
+                "icon": "💅",
+                "title": "Unieke Stijl",
+                "text": "Aantrekkelijke en gedurfde ontwerpen speciaal voor jou gemaakt."
+            }
+        ]
+    },
+    "services": {
+        "title": "Onze Prijsplannen",
+        "subtitle": "Kies het perfecte nageldesign voor jou. Eerlijke prijzen, geen verborgen kosten.",
+        "bookNow": "Boek Nu",
+        "title_a": "Gel met Kleur",
+        "price_a": "€25",
+        "description_a": "Een gladde en langdurige gelnagellak met jouw favoriete kleur.",
+        "features_a": [
+            "Hoogwaardige gelnagellak",
+            "Langdurige & glanzende afwerking",
+            "Sneldrogend onder UV-lamp",
+            "Geschikt voor natuurlijke en acrylnagels"
+        ],
+        "title_b": "French Tips",
+        "price_b": "€25",
+        "description_b": "Klassieke en elegante French tip nagels voor een verfijnde look.",
+        "features_b": [
+            "Tijdloze French manicure",
+            "Perfect voor elke gelegenheid",
+            "Schone & professionele afwerking",
+            "Beschikbaar in verschillende lengtes en vormen"
+        ],
+        "title_c": "Designs & Extra's",
+        "price_c": "€30",
+        "description_c": "Creatieve nail art met 3D-gel, edelstenen, chroom en meer.",
+        "features_c": [
+            "Unieke met de hand geschilderde ontwerpen",
+            "Glitter, marmer, ombré-effecten",
+            "3D-gel, edelstenen, chroom (extra: +€2)",
+            "Aangepaste nail art voor speciale gelegenheden"
+        ]
+    },
+    "work": {
+        "subTitle": "MIJN WERK",
+        "title": "Prachtige nagelontwerpen gemaakt met precisie en creativiteit"
+    },
+    "reviews": {
+        "heading": "Mijn passie voor nagelkunst opbouwen, één set tegelijk!",
+        "subheading": "Als beginnende nagelstyliste ben ik toegewijd aan het verbeteren van mijn vaardigheden en het creëren van prachtige ontwerpen. Bekijk wat mijn eerste klanten zeggen over hun ervaring!",
+        "highlights": [
+            "Zeer gewaardeerd door onze klanten",
+            "Vertrouwd door velen voor kwaliteit & creativiteit",
+            "Consistent positieve feedback van klanten"
+        ],
+        "clients": [
+            {
+                "name": "Lars De Smet",
+                "review": "Ik had een geweldige ervaring! Ze nam haar tijd met mijn nagels en zorgde ervoor dat ik tevreden was met het resultaat. Ik kom zeker terug!"
+            },
+            {
+                "name": "Sophie Van den Broeck",
+                "review": "Super vriendelijk en geduldig! Mijn nagels zien er geweldig uit en ik ben dol op het ontwerp. Kan niet wachten op mijn volgende afspraak!"
+            },
+            {
+                "name": "Emma Claes",
+                "review": "Voor het eerst haar nageldienst geprobeerd en ik was echt onder de indruk. Ze is nog aan het leren, maar de inspanning en zorg die ze erin stopt zijn geweldig!"
+            }
+        ]
+    },
+    "footer": {
+        "stayConnected": "Blijf verbonden en volg mij op sociale media voor de nieuwste nageltrends:",
+        "description": "Ontdek verfijnde nagelkunst en schoonheidsdiensten die speciaal voor jou zijn gemaakt. Verhoog je stijl met onze creatieve, hoogwaardige ontwerpen.",
+        "products": {
+            "title": "Producten",
+            "items": [
+                "Angular",
+                "React",
+                "Vue"
+            ]
+        },
+        "usefulLinks": {
+            "title": "Nuttige Links",
+            "items": [
+                "Prijzen",
+                "Instellingen",
+                "Bestellingen"
+            ]
+        },
+        "contact": {
+            "title": "Contact",
+            "address": "Marokko, Tetouan",
+            "email": "info@example.com",
+            "phone": "+ 01 234 567 88"
+        },
+        "createdBy": "Gemaakt door"
+    }
+}

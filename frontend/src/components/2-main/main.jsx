@@ -1,24 +1,23 @@
 import React from "react";
 import styles from "./main.module.css";
+import { useLanguage } from "../../contexts/LanguageContext"; 
+
 import productImage from "../../../public/nails/1.jpeg";
 import modelImage from "../../../public/nails/3.jpeg";
 import img1 from "../../../public/logo/logo.png";
 
 const Main = () => {
+    const { translations } = useLanguage();
+
     return (
         <section className={styles.container} id="home">
             {/* Product Image placed first */}
-            <img src={productImage} alt="Natural Product" className={styles.productImage} />
+            <img src={productImage} alt={translations.main.productAlt} className={styles.productImage} />
 
-            {/* Text content positioned on top (for web) */}
             <div className={styles.content}>
-                <h1 className={styles.heading}>
-                    Elevate your nails with the art of beauty & creativity.
-                </h1>
-                <p className={styles.subText}>
-                    Premium designs crafted with passion and care.
-                </p>
-                <button className={styles.browseButton}>Browse our craft</button>
+                <h1 className={styles.heading}>{translations.main.heading}</h1>
+                <p className={styles.subText}>{translations.main.subText}</p>
+                <button className={styles.browseButton}>{translations.main.browseButton}</button>
             </div>
 
             {/* Right container */}

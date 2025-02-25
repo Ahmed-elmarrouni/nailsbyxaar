@@ -1,11 +1,13 @@
-
 "use client";
 import { motion } from "framer-motion";
 import profilePic from "../../../public/nails/3.jpeg";
 import React from "react";
 import styles from "./about.module.css";
+import { useLanguage } from "../../contexts/LanguageContext"; 
 
-function About() {
+const About = () => {
+    const { translations } = useLanguage(); // Get translations from context
+
     return (
         <div className={styles.aboutContainer} id="about">
             {/* Abstract Background Shapes */}
@@ -44,7 +46,7 @@ function About() {
                     transition={{ duration: 1 }}
                 >
                     <div className={styles.imageFrame}>
-                        <img src={profilePic} alt="Nails by Xaar" className={styles.profileImage} />
+                        <img src={profilePic} alt={translations.about.profileAlt} className={styles.profileImage} />
                     </div>
                 </motion.div>
 
@@ -55,10 +57,8 @@ function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.2 }}
                 >
-                    <h1 className={styles.title}>Meet Nails by Xaar 🎨</h1>
-                    <p className={styles.description}>
-                        Hey! Ik ben <strong>Xaartje</strong>, 19 jaar oud en werkzaam als nagelstyliste in Blankenberge (8370). Ik werk zowel vanuit huis als bij klanten thuis en studeer momenteel voor mijn nageldiploma. Ik experimenteer graag met creatieve nail art en breid voortdurend mijn collectie kleuren uit, waarbij ik uitsluitend kwaliteitsproducten gebruik.
-                    </p>
+                    <h1 className={styles.title}>{translations.about.title}</h1>
+                    <p className={styles.description}>{translations.about.description}</p>
                 </motion.div>
 
                 {/* Feature Cards with Motion */}
@@ -72,11 +72,7 @@ function About() {
                         visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
                     }}
                 >
-                    {[
-                        { icon: "✨", title: "Art & Creativity", text: "Each design is a custom, hand-crafted work of art." },
-                        { icon: "🌟", title: "Luxury & Style", text: "Premium nail services that keep you ahead of trends." },
-                        { icon: "💅", title: "Signature Touch", text: "Aesthetic and bold designs made just for you." }
-                    ].map((card, index) => (
+                    {translations.about.cards.map((card, index) => (
                         <motion.div
                             key={index}
                             className={styles.card}
@@ -84,7 +80,7 @@ function About() {
                                 hidden: { opacity: 0, y: 30 },
                                 visible: { opacity: 1, y: 0 }
                             }}
-                            whileHover={{ scale: 1.1, rotate: 2 }} 
+                            whileHover={{ scale: 1.1, rotate: 2 }}
                             transition={{ type: "spring", stiffness: 200 }}
                         >
                             <div className={styles.cardIcon}>{card.icon}</div>

@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './footer.module.css';
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function Footer() {
+    const { translations } = useLanguage();
+
     return (
-        <footer className={styles.footer} >
+        <footer className={styles.footer}>
+            {/* Top Bar */}
             <div className={styles.topBar}>
                 <div className={styles.connectText}>
-                    <span>Stay connected and follow me on social media for the latest nail trends:</span>
+                    <span>{translations.footer.stayConnected}</span>
                 </div>
                 <div className={styles.socialIcons}>
                     <a href="#" aria-label="Facebook" className={styles.icon}>
@@ -33,47 +37,46 @@ export default function Footer() {
                 </div>
             </div>
 
+            {/* Bottom Bar */}
             <div className={styles.bottomBar}>
                 <div className={styles.section}>
                     <h6 className={styles.title}>Nails By Xaartjee</h6>
-                    <p>
-                        Discover exquisite nail art and beauty services tailored just for you.
-                        Elevate your style with our creative, high-quality designs.
-                    </p>
+                    <p>{translations.footer.description}</p>
+                </div>
 
-                </div>
                 <div className={styles.section}>
-                    <h6 className={styles.title}>Products</h6>
+                    <h6 className={styles.title}>{translations.footer.products.title}</h6>
                     <ul className={styles.list}>
-                        <li><a href="#">Angular</a></li>
-                        <li><a href="#">React</a></li>
-                        <li><a href="#">Vue</a></li>
+                        {translations.footer.products.items.map((item, index) => (
+                            <li key={index}><a href="#">{item}</a></li>
+                        ))}
                     </ul>
                 </div>
+
                 <div className={styles.section}>
-                    <h6 className={styles.title}>Useful Links</h6>
+                    <h6 className={styles.title}>{translations.footer.usefulLinks.title}</h6>
                     <ul className={styles.list}>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Orders</a></li>
+                        {translations.footer.usefulLinks.items.map((item, index) => (
+                            <li key={index}><a href="#">{item}</a></li>
+                        ))}
                     </ul>
                 </div>
+
                 <div className={styles.section}>
-                    <h6 className={styles.title}>Contact</h6>
+                    <h6 className={styles.title}>{translations.footer.contact.title}</h6>
                     <ul className={styles.contactList}>
-                        <li>Morocco, Tetouan</li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                        <li>+ 01 234 567 88</li>
+                        <li>{translations.footer.contact.address}</li>
+                        <li><a href="mailto:info@example.com">{translations.footer.contact.email}</a></li>
+                        <li>{translations.footer.contact.phone}</li>
                     </ul>
                 </div>
             </div>
 
-
+            {/* Copyright Section */}
             <div className={styles.copyRight}>
-                <span>© 2025 Created by </span>
-                <a href="https://www.ahmedelmarrouni.com/" className={styles.copyLink}>Ahmed El marrouni</a>
+                <span>© 2025 {translations.footer.createdBy} </span>
+                <a href="https://www.ahmedelmarrouni.com/" className={styles.copyLink}>Ahmed El Marrouni</a>
             </div>
-
         </footer>
     );
 }

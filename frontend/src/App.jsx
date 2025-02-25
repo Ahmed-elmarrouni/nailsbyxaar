@@ -10,21 +10,26 @@ import Services from './components/4-services/services'
 import Contact from './components/7-contact/contact'
 import About from './components/3-about/about'
 import ScrollButton from './components/scrollButton/scroll-button'
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
 
   return (
 
     <>
-      <Navbar />
-      <Main />
-      <About />
-      <Work />
-      <Services />
-      <Reviews />
-      <Contact />
-      <Footer />
-      <ScrollButton />
+      <LanguageProvider >
+
+        <Navbar />
+        <Main />
+        <About />
+        <Work />
+        <Services />
+        <Reviews />
+        <Contact />
+        <Footer />
+        <ScrollButton />
+      </LanguageProvider>
+
     </>
   )
 }

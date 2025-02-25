@@ -1,0 +1,124 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "work": "Work",
+        "reviews": "Reviews",
+        "contact": "Contact"
+    },
+    "main": {
+        "productAlt": "Natural Product",
+        "heading": "Elevate your nails with the art of beauty & creativity.",
+        "subText": "Premium designs crafted with passion and care.",
+        "browseButton": "Browse our craft"
+    },
+    "about": {
+        "profileAlt": "Nails by Xaar",
+        "title": "Meet Nails by Xaar 🎨",
+        "description": "Hey! I am Xaartje, 19 years old and a nail stylist in Blankenberge (8370). I work both from home and at clients' locations while studying for my nail diploma. I love experimenting with creative nail art and constantly expanding my collection of colors, using only high-quality products.",
+        "cards": [
+            {
+                "icon": "✨",
+                "title": "Art & Creativity",
+                "text": "Each design is a custom, hand-crafted work of art."
+            },
+            {
+                "icon": "🌟",
+                "title": "Luxury & Style",
+                "text": "Premium nail services that keep you ahead of trends."
+            },
+            {
+                "icon": "💅",
+                "title": "Signature Touch",
+                "text": "Aesthetic and bold designs made just for you."
+            }
+        ]
+    },
+    "services": {
+        "title": "Our Pricing Plan",
+        "subtitle": "Choose the perfect nail design for you. Simple pricing, no hidden fees.",
+        "bookNow": "Book Now",
+        "title_a": "Gel with Color",
+        "price_a": "€25",
+        "description_a": "A smooth and long-lasting gel polish with your favorite color.",
+        "features_a": [
+            "High-quality gel polish",
+            "Long-lasting & glossy finish",
+            "Fast drying under UV lamp",
+            "Suitable for natural and acrylic nails"
+        ],
+        "title_b": "French Tips",
+        "price_b": "€25",
+        "description_b": "Classic and elegant French tip nails for a sophisticated look.",
+        "features_b": [
+            "Timeless French manicure",
+            "Perfect for any occasion",
+            "Clean & professional finish",
+            "Available in different lengths and shapes"
+        ],
+        "title_c": "Designs & Extras",
+        "price_c": "€30",
+        "description_c": "Creative nail art with 3D gel, gems, chrome, and more.",
+        "features_c": [
+            "Unique hand-painted designs",
+            "Glitter, marble, ombré effects",
+            "3D gel, gems, chrome (extra: +€2)",
+            "Custom nail art for special events"
+        ]
+    },
+    "work": {
+        "subTitle": "MY WORK",
+        "title": "Stunning nail designs crafted with precision and creativity"
+    },
+    "reviews": {
+        "heading": "Building my passion for nail art, one set at a time!",
+        "subheading": "As a beginner nail stylist, I'm dedicated to improving my skills and creating beautiful designs. Check out what my early clients have to say about their experience!",
+        "highlights": [
+            "Highly Appreciated by Our Customers",
+            "Trusted by Many for Quality & Creativity",
+            "Consistently Positive Feedback from Clients"
+        ],
+        "clients": [
+            {
+                "name": "Lars De Smet",
+                "review": "I had a lovely experience! She took her time with my nails and made sure I was happy with the result. Definitely coming back!"
+            },
+            {
+                "name": "Sophie Van den Broeck",
+                "review": "Super friendly and patient! My nails look amazing, and I love the design. Can’t wait for my next appointment!"
+            },
+            {
+                "name": "Emma Claes",
+                "review": "Tried her nail service for the first time, and I was really impressed. She’s still learning, but the effort and care she puts in is great!"
+            }
+        ]
+    },
+    "footer": {
+        "stayConnected": "Stay connected and follow me on social media for the latest nail trends:",
+        "description": "Discover exquisite nail art and beauty services tailored just for you. Elevate your style with our creative, high-quality designs.",
+        "products": {
+            "title": "Products",
+            "items": [
+                "Angular",
+                "React",
+                "Vue"
+            ]
+        },
+        "usefulLinks": {
+            "title": "Useful Links",
+            "items": [
+                "Pricing",
+                "Settings",
+                "Orders"
+            ]
+        },
+        "contact": {
+            "title": "Contact",
+            "address": "Morocco, Tetouan",
+            "email": "info@example.com",
+            "phone": "+ 01 234 567 88"
+        },
+        "createdBy": "Created by"
+    }
+}
