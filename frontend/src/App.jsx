@@ -9,6 +9,7 @@ import Reviews from './components/6-reviews/reviews'
 import Services from './components/4-services/services'
 import Contact from './components/7-contact/contact'
 import About from './components/3-about/about'
+import ScrollButton from './components/scrollButton/scroll-button'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Reviews />
       <Contact />
       <Footer />
+      <ScrollButton />
     </>
   )
 }

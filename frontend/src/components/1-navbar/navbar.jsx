@@ -100,14 +100,6 @@ class Navbar extends Component {
                             </button>
                             {this.state.isLanguageMenuOpen && (
                                 <div className={styles.languageMenu}>
-                                    <button onClick={() => this.setLanguage("EN")}>
-                                        <img
-                                            src={enFlag}
-                                            alt="English"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        EN
-                                    </button>
                                     <button onClick={() => this.setLanguage("NL")}>
                                         <img
                                             src={nlFlag}
@@ -115,6 +107,14 @@ class Navbar extends Component {
                                             className={styles.languageIcon}
                                         />{" "}
                                         NL
+                                    </button>
+                                    <button onClick={() => this.setLanguage("EN")}>
+                                        <img
+                                            src={enFlag}
+                                            alt="English"
+                                            className={styles.languageIcon}
+                                        />{" "}
+                                        EN
                                     </button>
                                     <button onClick={() => this.setLanguage("FR")}>
                                         <img
@@ -141,10 +141,10 @@ class Navbar extends Component {
                 {/* Mobile Menu */}
                 {this.state.isMobile && this.state.isMenuOpen && (
                     <div className={styles.mobileMenu}>
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#services">Services</a>
-                        <a href="#contact">Contact</a>
+                        <a href="#home" onClick={this.toggleMenu}>Home</a>
+                        <a href="#about" onClick={this.toggleMenu}>About</a>
+                        <a href="#services" onClick={this.toggleMenu}>Services</a>
+                        <a href="#contact" onClick={this.toggleMenu}>Contact</a>
                         <div
                             className={styles.languageSelector}
                             ref={this.languageMenuRef}
@@ -153,6 +153,7 @@ class Navbar extends Component {
                                 className={styles.languageButton}
                                 onClick={this.toggleLanguageMenu}
                             >
+                                language{" "}
                                 <img
                                     src={
                                         this.state.language === "EN"
@@ -167,15 +168,8 @@ class Navbar extends Component {
                             </button>
                             {this.state.isLanguageMenuOpen && (
                                 <div className={styles.languageMenu}>
-                                    <button onClick={() => this.setLanguage("EN")}>
-                                        <img
-                                            src={enFlag}
-                                            alt="English"
-                                            className={styles.languageIcon}
-                                        />{" "}
-                                        EN
-                                    </button>
-                                    <button onClick={() => this.setLanguage("NL")}>
+
+                                    <button onClick={() => { this.setLanguage("NL"); this.toggleMenu(); }}>
                                         <img
                                             src={nlFlag}
                                             alt="Dutch"
@@ -183,7 +177,17 @@ class Navbar extends Component {
                                         />{" "}
                                         NL
                                     </button>
-                                    <button onClick={() => this.setLanguage("FR")}>
+
+                                    <button onClick={() => { this.setLanguage("EN"); this.toggleMenu(); }}>
+                                        <img
+                                            src={enFlag}
+                                            alt="English"
+                                            className={styles.languageIcon}
+                                        />{" "}
+                                        EN
+                                    </button>
+
+                                    <button onClick={() => { this.setLanguage("FR"); this.toggleMenu(); }}>
                                         <img
                                             src={frFlag}
                                             alt="French"
@@ -196,6 +200,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                 )}
+
             </nav>
         );
     }

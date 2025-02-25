@@ -7,7 +7,7 @@ import styles from "./about.module.css";
 
 function About() {
     return (
-        <div className={styles.aboutContainer}>
+        <div className={styles.aboutContainer} id="about">
             {/* Abstract Background Shapes */}
             <motion.div
                 className={`${styles.shape} ${styles.shape1}`}

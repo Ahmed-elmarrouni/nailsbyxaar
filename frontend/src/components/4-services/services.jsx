@@ -3,7 +3,7 @@ import styles from "./services.module.css";
 
 const Services = () => {
     return (
-        <div className={styles.pricingContainer}>
+        <div className={styles.pricingContainer} id="services">
             <h2 className={styles.title}>Our Pricing Plan</h2>
             <p className={styles.subtitle}>
                 Choose the perfect nail design for you. Simple pricing, no hidden fees.

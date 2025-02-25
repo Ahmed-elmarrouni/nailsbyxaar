@@ -34,7 +34,7 @@ function Contact() {
     };
 
     return (
-        <div className={styles.layoutContainer}>
+        <div className={styles.layoutContainer} id="contact">
             {/* Sidebar (Stays Fixed) */}
             <aside className={styles.sidebar}>
                 <div className={styles.logo}>Nails by Xaar</div>
