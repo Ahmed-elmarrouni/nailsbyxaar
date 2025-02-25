@@ -103,7 +103,8 @@ function Contact() {
     📝 Message: ${formData.message || "No additional message provided."}`;
 
         try {
-            await axios.post("http://localhost:5000/send-whatsapp", { message: whatsappMessage });
+            // await axios.post("http://localhost:5000/send-whatsapp", { message: whatsappMessage });
+            await axios.post("https://nailsbyxaar-production.up.railway.app/send-whatsapp", { message: whatsappMessage });
             toast.success("✅ WhatsApp booking request sent!");
             setFormData({
                 name: "",
