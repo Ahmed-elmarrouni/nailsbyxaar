@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./reviews.module.css";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-import starIcon from "../../../public/imgs/star.png";
-import coltonImage from "../../../public/logo/logo.png";
-import ireneImage from "../../../public/logo/logo.png";
-import anneImage from "../../../public/logo/logo.png";
+const starIcon = "/imgs/star.png";
+const coltonImage = "/logo/logo.png";
+const ireneImage = "/logo/logo.png";
+const anneImage = "/logo/logo.png";
 
 const Reviews = () => {
     const { translations } = useLanguage();

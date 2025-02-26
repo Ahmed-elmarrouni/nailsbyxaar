@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.css";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-import enFlag from "../../../public/flags/en.png";
-import nlFlag from "../../../public/flags/nl.png";
-import frFlag from "../../../public/flags/fr.png";
-import logo from "../../../public/logo/logo.png";
+const enFlag = "/flags/en.png";
+const nlFlag = "/flags/nl.png";
+const frFlag = "/flags/fr.png";
+const logo = "/logo/logo.png";
 
 const languageFlags = {
     EN: enFlag,

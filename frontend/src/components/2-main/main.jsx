@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./main.module.css";
-import { useLanguage } from "../../contexts/LanguageContext"; 
+import { useLanguage } from "../../contexts/LanguageContext";
 
-import productImage from "../../../public/nails/1.jpeg";
-import modelImage from "../../../public/nails/3.jpeg";
-import img1 from "../../../public/logo/logo.png";
+
+const productImage = "/nails/1.jpeg";
+const modelImage = "/nails/3.jpeg";
+const img1 = "/logo/logo.png";
 
 const Main = () => {
     const { translations } = useLanguage();

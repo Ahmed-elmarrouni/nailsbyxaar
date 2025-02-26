@@ -1,12 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import profilePic from "../../../public/nails/3.jpeg";
 import React from "react";
 import styles from "./about.module.css";
-import { useLanguage } from "../../contexts/LanguageContext"; 
+import { useLanguage } from "../../contexts/LanguageContext";
+
+const profilePic = "/nails/3.jpeg";
 
 const About = () => {
-    const { translations } = useLanguage(); // Get translations from context
+    const { translations } = useLanguage();
 
     return (
         <div className={styles.aboutContainer} id="about">
