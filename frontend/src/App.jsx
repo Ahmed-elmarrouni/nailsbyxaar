@@ -21,6 +21,7 @@ import { useRef, useEffect } from 'react';
 import TermsAndConditions from './components/9-legal/termsAndConditions';
 import TermsOfService from './components/9-legal/termsOfService';
 import SitePrivacy from './components/9-legal/sitePrivacy.jsx';
+import { Analytics } from '@vercel/analytics/next';
 
 function ScrollToSection() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function App() {
           {/* ✅ Home Page with Main Components */}
           <Route path="/" element={
             <>
+              <Analytics />
               <Main />
               <About />
               <Work />
