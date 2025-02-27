@@ -11,8 +11,10 @@ import Contact from './components/7-contact/contact'
 import About from './components/3-about/about'
 import ScrollButton from './components/scrollButton/scroll-button'
 import { LanguageProvider } from './contexts/LanguageContext';
+import { useRef } from 'react';
 
 function App() {
+  const contactRef = useRef(null);  // <-- Declare the ref here
 
   return (
 
@@ -23,9 +25,9 @@ function App() {
         <Main />
         <About />
         <Work />
-        <Services />
+        <Services onSelectOffer={(offer) => contactRef.current(offer)} />  {/* Pass ref function */}
         <Reviews />
-        <Contact />
+        <Contact ref={contactRef} />
         <Footer />
         <ScrollButton />
       </LanguageProvider>

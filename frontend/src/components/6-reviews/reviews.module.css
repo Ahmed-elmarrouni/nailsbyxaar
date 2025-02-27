@@ -8,8 +8,6 @@
 
 body {
     margin: 0 auto;
-    background-image: url("./images/bg-pattern-top-desktop.svg"),
-        url("./images/bg-pattern-bottom-desktop.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: left top, center bottom;
     background-size: 39% 40%, 45% 70%;

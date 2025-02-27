@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useState, useEffect, useRef, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./contact.module.css";
 import emailjs from "emailjs-com";
 import axios from "axios";
 
-// Notific
+// Notification
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-function Contact() {
-    const [activeForm, setActiveForm] = useState("contact");
+// Use forwardRef to access the ref from App.jsx
+const Contact = forwardRef((props, ref) => {
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [activeForm, setActiveForm] = useState("contact");
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -21,7 +22,6 @@ function Contact() {
         date: "",
         time: "",
     });
-
     // Update time every minute
     useEffect(() => {
         const interval = setInterval(() => {
@@ -35,12 +35,29 @@ function Contact() {
         return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
     };
 
-    const handleFormSwitch = (formType) => {
-        setActiveForm(formType);
-    };
+
+    // Attach function to the ref
+    useEffect(() => {
+        if (ref) {
+            ref.current = (offer) => {
+                setActiveForm("booking");
+                setFormData((prevData) => ({
+                    ...prevData,
+                    offer: offer, // Auto-select the offer
+                }));
+
+                // Scroll smoothly to the contact section
+                document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+            };
+        }
+    }, [ref]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleFormSwitch = (formType) => {
+        setActiveForm(formType);
     };
 
     // ✅ Send Email for Comments Only
@@ -94,17 +111,17 @@ function Contact() {
         setLoading(true); // ✅ Start loading
 
         const whatsappMessage = `📅 New Booking Request 📅
-    👤 Name: ${formData.name}
-    📧 Email: ${formData.email}
-    📞 Phone: ${formData.phone}
-    💅 Service: ${formData.offer}
-    📅 Date: ${formData.date}
-    🕒 Time: ${formData.time}
-    📝 Message: ${formData.message || "No additional message provided."}`;
+        👤 Name: ${formData.name}
+        📧 Email: ${formData.email}
+        📞 Phone: ${formData.phone}
+        💅 Service: ${formData.offer}
+        📅 Date: ${formData.date}
+        🕒 Time: ${formData.time}
+        📝 Message: ${formData.message || "No additional message provided."}`;
 
         try {
-            // await axios.post("http://localhost:5000/send-whatsapp", { message: whatsappMessage });
-            await axios.post("https://nailsbyxaar-production.up.railway.app/send-whatsapp", { message: whatsappMessage });
+            await axios.post("http://localhost:5000/send-whatsapp", { message: whatsappMessage });
+            // await axios.post("https://nailsbyxaar-production.up.railway.app/send-whatsapp", { message: whatsappMessage });
             toast.success("✅ WhatsApp booking request sent!");
             setFormData({
                 name: "",
@@ -126,7 +143,6 @@ function Contact() {
 
     return (
         <div className={styles.layoutContainer} id="contact">
-
             {/* Notification  */}
             <ToastContainer
                 position="top-right"
@@ -188,16 +204,10 @@ function Contact() {
 
                 {/* Toggle Buttons */}
                 <div className={styles.formToggleButtons}>
-                    <button
-                        className={`${styles.toggleButton} ${activeForm === "contact" ? styles.active : ""}`}
-                        onClick={() => handleFormSwitch("contact")}
-                    >
+                    <button className={`${styles.toggleButton} ${activeForm === "contact" ? styles.active : ""}`} onClick={() => setActiveForm("contact")}>
                         Comment
                     </button>
-                    <button
-                        className={`${styles.toggleButton} ${activeForm === "booking" ? styles.active : ""}`}
-                        onClick={() => handleFormSwitch("booking")}
-                    >
+                    <button className={`${styles.toggleButton} ${activeForm === "booking" ? styles.active : ""}`} onClick={() => setActiveForm("booking")}>
                         Booking
                     </button>
                 </div>
@@ -235,12 +245,14 @@ function Contact() {
                         </motion.form>
                     )}
 
-                    {/* ✅ Booking Form (Sends WhatsApp Message) */}
+
+                    {/* Booking Form */}
                     {activeForm === "booking" && (
                         <motion.form
                             key="booking"
                             className={styles.bookingForm}
                             onSubmit={handleBookingSubmit}
+
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -266,12 +278,12 @@ function Contact() {
                                     <label htmlFor="bookingOffer">Choose Offer</label>
                                     <select id="bookingOffer" name="offer" onChange={handleChange} value={formData.offer} required>
                                         <option value="">--Select an Offer--</option>
-                                        <option value="manicure">Manicure</option>
-                                        <option value="pedicure">Pedicure</option>
-                                        <option value="nailArt">Nail Art</option>
-                                        <option value="acrylicNails">Acrylic Nails</option>
+                                        <option value="Gel with Color">Gel with Color</option>
+                                        <option value="French Tips">French Tips</option>
+                                        <option value="Designs & Extras">Designs & Extras</option>
                                     </select>
                                 </div>
+
 
                                 <div className={styles.formGroup}>
                                     <label htmlFor="bookingDate">Date</label>
@@ -288,18 +300,22 @@ function Contact() {
                                     <textarea id="bookingMessage" name="message" rows="5" value={formData.message} onChange={handleChange}></textarea>
                                 </div>
 
+
                             </div>
 
                             <button type="submit" className={styles.submitBtn} disabled={loading}>
                                 {loading ? "Sending..." : "Book Now"}
                             </button>
                             <p className={styles.responseMessage}>I will reply to you as soon as possible.</p>
+
                         </motion.form>
                     )}
                 </AnimatePresence>
             </div>
+
+            {/* form section end  */}
         </div>
     );
-}
+});
 
 export default Contact;
