@@ -21,7 +21,7 @@ import { useRef, useEffect } from 'react';
 import TermsAndConditions from './components/9-legal/termsAndConditions';
 import TermsOfService from './components/9-legal/termsOfService';
 import SitePrivacy from './components/9-legal/sitePrivacy.jsx';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/react"
 
 function ScrollToSection() {
   const location = useLocation();
