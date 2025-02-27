@@ -1,12 +1,12 @@
 .scrollButton {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    right: 1rem;
     background-color: #ff69b4;
     border: none;
     border-radius: 50%;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;

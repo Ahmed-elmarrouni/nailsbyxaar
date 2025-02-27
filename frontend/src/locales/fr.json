@@ -5,7 +5,8 @@
         "services": "Services",
         "work": "Travail",
         "reviews": "Avis",
-        "contact": "Contact"
+        "contact": "Contact",
+        "languageBtn": "Langue"
     },
     "main": {
         "productAlt": "Produit naturel",
@@ -97,20 +98,20 @@
     "footer": {
         "stayConnected": "Restez connecté et suivez-moi sur les réseaux sociaux pour les dernières tendances ongulaires:",
         "description": "Découvrez un art des ongles exquis et des services de beauté adaptés à vous. Élevez votre style avec nos designs créatifs et de haute qualité.",
-        "products": {
-            "title": "Produits",
+        "legal": {
+            "title": "Légal",
             "items": [
-                "Angular",
-                "React",
-                "Vue"
+                "Conditions d'utilisation",
+                "Conditions de service",
+                "Politique de confidentialité"
             ]
         },
         "usefulLinks": {
             "title": "Liens Utiles",
             "items": [
-                "Tarifs",
-                "Paramètres",
-                "Commandes"
+                "Accueil",
+                "À propos",
+                "Services"
             ]
         },
         "contact": {
@@ -120,5 +121,47 @@
             "phone": "+ 01 234 567 88"
         },
         "createdBy": "Créé par"
+    },
+    "contactSection": {
+        "formError": "⚠️ Veuillez remplir tous les champs avant de soumettre.",
+        "emailSuccess": "📧 Email envoyé avec succès!",
+        "emailFailure": "❌ Échec de l'envoi de l'email",
+        "bookingError": "⚠️ Veuillez remplir tous les champs avant de réserver.",
+        "whatsappSuccess": "✅ Demande de réservation WhatsApp envoyée!",
+        "whatsappFailure": "❌ Échec de l'envoi du message WhatsApp",
+        "formToggleContact": "Commentaire",
+        "formToggleBooking": "Réservation",
+        "formSubmitComment": "Soumettre le commentaire",
+        "formBookNow": "Réserver maintenant",
+        "responseMessage": "Je vous répondrai dès que possible.",
+        "logo": "Nails by Xaar",
+        "helpTitle": "Nous sommes là pour vous aider",
+        "questionsText": "Des questions sur nos services de manucure?",
+        "contactOrBook": "Contactez-nous ou prenez un rendez-vous!",
+        "address": "123 Rue des Ongles",
+        "cityState": "Ville, État 12345",
+        "workingHoursTitle": "Heures d'ouverture:",
+        "workingDays": "Lundi - Vendredi",
+        "workingHours": "9h00 - 18h00",
+        "currentTime": "Heure actuelle",
+        "formTitle": "Vous avez des idées ? Nous avons les compétences. Travaillons ensemble.",
+        "formDescription": "Dites-nous en plus sur vous et vos idées.",
+        "commentButton": "Commentaire",
+        "bookingButton": "Réservation",
+        "nameLabel": "Nom",
+        "emailLabel": "Email",
+        "messageLabel": "Message/Commentaire",
+        "submitComment": "Envoyer le Commentaire",
+        "phoneLabel": "Numéro de téléphone",
+        "offerLabel": "Choisir une offre",
+        "selectOffer": "--Sélectionner une offre--",
+        "gelWithColor": "Gel avec couleur",
+        "frenchTips": "Pointes françaises",
+        "designsExtras": "Designs et Extras",
+        "dateLabel": "Date",
+        "timeLabel": "Heure",
+        "bookNow": "Réserver maintenant",
+        "sending": "Envoi...",
+        "replySoon": "Je vous répondrai dès que possible."
     }
 }

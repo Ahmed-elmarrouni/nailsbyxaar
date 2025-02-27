@@ -33,7 +33,7 @@ const Work = () => {
     }, []);
 
     return (
-        <div className={style.workContainer}>
+        <div className={style.workContainer} id="work">
             <h4 className={style.aboutUs}>{translations.work.subTitle}</h4>
             <h2 className={style.title}>{translations.work.title}</h2>
 

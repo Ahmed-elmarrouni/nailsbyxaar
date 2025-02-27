@@ -5,7 +5,8 @@
         "services": "Diensten",
         "work": "Werk",
         "reviews": "Recensies",
-        "contact": "Contact"
+        "contact": "Contact",
+        "languageBtn": "Taal"
     },
     "main": {
         "productAlt": "Natuurlijk product",
@@ -97,20 +98,20 @@
     "footer": {
         "stayConnected": "Blijf verbonden en volg mij op sociale media voor de nieuwste nageltrends:",
         "description": "Ontdek verfijnde nagelkunst en schoonheidsdiensten die speciaal voor jou zijn gemaakt. Verhoog je stijl met onze creatieve, hoogwaardige ontwerpen.",
-        "products": {
-            "title": "Producten",
+        "legal": {
+            "title": "Juridisch",
             "items": [
-                "Angular",
-                "React",
-                "Vue"
+                "Gebruiksvoorwaarden",
+                "Servicevoorwaarden",
+                "Privacybeleid"
             ]
         },
         "usefulLinks": {
             "title": "Nuttige Links",
             "items": [
-                "Prijzen",
-                "Instellingen",
-                "Bestellingen"
+                "Home",
+                "Over",
+                "Diensten"
             ]
         },
         "contact": {
@@ -120,5 +121,47 @@
             "phone": "+ 01 234 567 88"
         },
         "createdBy": "Gemaakt door"
+    },
+    "contactSection": {
+        "formError": "⚠️ Vul alle velden in voordat je het formulier indient.",
+        "emailSuccess": "📧 E-mail succesvol verzonden!",
+        "emailFailure": "❌ E-mail verzenden mislukt",
+        "bookingError": "⚠️ Vul alle velden in voordat je boekt.",
+        "whatsappSuccess": "✅ WhatsApp boekingsverzoek verzonden!",
+        "whatsappFailure": "❌ WhatsApp bericht verzenden mislukt",
+        "formToggleContact": "Opmerking",
+        "formToggleBooking": "Boeking",
+        "formSubmitComment": "Verstuur Opmerking",
+        "formBookNow": "Nu Boeken",
+        "responseMessage": "Ik zal je zo snel mogelijk antwoorden.",
+        "logo": "Nails by Xaar",
+        "helpTitle": "We zijn hier om te helpen",
+        "questionsText": "Heb je vragen over onze nageldiensten?",
+        "contactOrBook": "Neem contact met ons op of boek een afspraak!",
+        "address": "123 Nagelstraat",
+        "cityState": "Stad, Staat 12345",
+        "workingHoursTitle": "Openingstijden:",
+        "workingDays": "Maandag - Vrijdag",
+        "workingHours": "09:00 - 18:00",
+        "currentTime": "Huidige tijd",
+        "formTitle": "Heb je ideeën? Wij hebben de vaardigheden. Laten we samenwerken.",
+        "formDescription": "Vertel ons meer over jezelf en je ideeën.",
+        "commentButton": "Commentaar",
+        "bookingButton": "Boeking",
+        "nameLabel": "Naam",
+        "emailLabel": "E-mail",
+        "messageLabel": "Bericht/Commentaar",
+        "submitComment": "Commentaar Verzenden",
+        "phoneLabel": "Telefoonnummer",
+        "offerLabel": "Kies een Aanbieding",
+        "selectOffer": "--Selecteer een Aanbieding--",
+        "gelWithColor": "Gel met Kleur",
+        "frenchTips": "Franse Tips",
+        "designsExtras": "Designs & Extra's",
+        "dateLabel": "Datum",
+        "timeLabel": "Tijd",
+        "bookNow": "Boek Nu",
+        "sending": "Verzenden...",
+        "replySoon": "Ik zal zo snel mogelijk reageren."
     }
 }

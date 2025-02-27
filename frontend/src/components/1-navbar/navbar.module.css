@@ -1,5 +1,8 @@
 .navbar {
-    background-color: #FFFAF5;
+    /* background-color: #FFFAF5; */
+    background-color: rgba(255, 250, 245, 0.903);
+    /* Slightly transparent */
+
     padding: 1rem 2rem;
     box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
@@ -208,6 +211,6 @@
 }
 
 .languageSelector {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     align-self: center;
 }

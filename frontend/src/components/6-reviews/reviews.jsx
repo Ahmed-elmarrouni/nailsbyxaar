@@ -11,7 +11,7 @@ const Reviews = () => {
     const { translations } = useLanguage();
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="reviews">
             {/* Upper Section */}
             <div className={styles.upper}>
                 <div className={styles.left}>

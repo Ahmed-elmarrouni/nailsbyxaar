@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./main.module.css";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { Link } from 'react-scroll';
 
 
 const productImage = "/nails/1.jpeg";
@@ -18,7 +19,16 @@ const Main = () => {
             <div className={styles.content}>
                 <h1 className={styles.heading}>{translations.main.heading}</h1>
                 <p className={styles.subText}>{translations.main.subText}</p>
-                <button className={styles.browseButton}>{translations.main.browseButton}</button>
+                {/* <button className={styles.browseButton}>{translations.main.browseButton}</button> */}
+                <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    className={styles.browseButton}
+                >
+                    {translations.main.browseButton}
+                </Link>
+
             </div>
 
             {/* Right container */}

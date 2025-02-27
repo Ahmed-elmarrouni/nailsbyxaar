@@ -1,0 +1,153 @@
+/* General Styling for All Legal Pages */
+.legalContainer {
+    max-width: 70%;
+    margin: 80px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Page Titles */
+.legalTitle {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Adding a subtle underline effect */
+.legalTitle::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(45deg, #D33B80, #FFD1E8);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Section Headings */
+.legalHeading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #444;
+    margin-top: 30px;
+    border-left: 4px solid #D33B80;
+    padding-left: 12px;
+    transition: all 0.3s ease;
+}
+
+.legalHeading:hover {
+    color: #D33B80;
+    transform: translateX(5px);
+}
+
+/* General Paragraph Styling */
+.legalText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+/* List Styling */
+.legalList {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.legalList li {
+    font-size: 16px;
+    color: #444;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    list-style-type: none;
+
+}
+
+.legalList li::before {
+    content: "✔";
+    color: #f20871;
+    font-weight: bold;
+    position: absolute;
+
+    left: -15px;
+    top: 2px;
+}
+
+.legalList li:hover {
+    color: #D33B80;
+    transform: translateX(5px);
+}
+
+/* Links */
+.legalLink {
+    color: #D33B80;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.legalLink:hover {
+    color: #f20871;
+}
+
+/* Contact Email */
+.legalEmail {
+    display: inline-block;
+    color: #D33B80;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.legalEmail:hover {
+    color: #f20871;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .legalContainer {
+        padding: 10px;
+        margin: 6rem auto;
+        /* width: 80%; */
+    }
+
+    .legalTitle {
+        font-size: 28px;
+    }
+
+    .legalHeading {
+        font-size: 20px;
+    }
+
+    .legalText {
+        font-size: 15px;
+    }
+
+    .legalList li {
+        font-size: 15px;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

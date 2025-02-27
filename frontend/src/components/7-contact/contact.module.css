@@ -104,12 +104,15 @@
     margin-bottom: 0.4rem;
     font-weight: 700;
     color: #222;
+    text-align: center;
 }
 
 .formSection p {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
     color: #555;
+    text-align: center;
+
 }
 
 /* Toggle Buttons */

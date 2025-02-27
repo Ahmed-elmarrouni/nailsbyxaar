@@ -5,7 +5,8 @@
         "services": "Services",
         "work": "Work",
         "reviews": "Reviews",
-        "contact": "Contact"
+        "contact": "Contact",
+        "languageBtn" : "language"
     },
     "main": {
         "productAlt": "Natural Product",
@@ -97,20 +98,20 @@
     "footer": {
         "stayConnected": "Stay connected and follow me on social media for the latest nail trends:",
         "description": "Discover exquisite nail art and beauty services tailored just for you. Elevate your style with our creative, high-quality designs.",
-        "products": {
-            "title": "Products",
+        "legal": {
+            "title": "Legal",
             "items": [
-                "Angular",
-                "React",
-                "Vue"
+                "Terms and Conditions of Use",
+                "Terms of Service",
+                "Privacy Policy"
             ]
         },
         "usefulLinks": {
             "title": "Useful Links",
             "items": [
-                "Pricing",
-                "Settings",
-                "Orders"
+                "Home",
+                "About",
+                "Services"
             ]
         },
         "contact": {
@@ -120,5 +121,51 @@
             "phone": "+ 01 234 567 88"
         },
         "createdBy": "Created by"
+    },
+    "contactSection": {
+        "formError": "⚠️ Please fill in all fields before submitting.",
+        "emailSuccess": "📧 Email sent successfully!",
+        "emailFailure": "❌ Failed to send email",
+        "bookingError": "⚠️ Please fill in all fields before booking.",
+        "whatsappSuccess": "✅ WhatsApp booking request sent!",
+        "whatsappFailure": "❌ Failed to send WhatsApp message",
+        "formToggleContact": "Comment",
+        "formToggleBooking": "Booking",
+        "formSubmitComment": "Submit Comment",
+        "formBookNow": "Book Now",
+        "responseMessage": "I will reply to you as soon as possible.",
+        
+        "logo": "Nails by Xaar",
+        "helpTitle": "We're here to help",
+        "questionsText": "Have questions about our nail services?",
+        "contactOrBook": "Get in touch or book an appointment!",
+        "address": "123 Nail Street",
+        "cityState": "City, State 12345",
+        "workingHoursTitle": "Working Hours:",
+        "workingDays": "Monday - Friday",
+        "workingHours": "9:00 AM - 6:00 PM",
+        "currentTime": "Current Time",
+
+        "formTitle": "Got ideas? We’ve got the skills. Let’s team up.",
+        "formDescription": "Tell us more about yourself and what you’ve got in mind.",
+        "commentButton": "Comment",
+        "bookingButton": "Booking",
+        "nameLabel": "Name",
+        "emailLabel": "Email",
+        "messageLabel": "Message/Comment",
+        "submitComment": "Submit Comment",
+        "phoneLabel": "Phone Number",
+        "offerLabel": "Choose Offer",
+        "selectOffer": "--Select an Offer--",
+        "gelWithColor": "Gel with Color",
+        "frenchTips": "French Tips",
+        "designsExtras": "Designs & Extras",
+        "dateLabel": "Date",
+        "timeLabel": "Time",
+        "bookNow": "Book Now",
+        "sending": "Sending...",
+        "replySoon": "I will reply to you as soon as possible."
+    
+    
     }
 }

@@ -5,12 +5,17 @@ import styles from "./contact.module.css";
 import emailjs from "emailjs-com";
 import axios from "axios";
 
+// translatin
+import { useLanguage } from "../../contexts/LanguageContext";
+
+
 // Notification
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Use forwardRef to access the ref from App.jsx
 const Contact = forwardRef((props, ref) => {
+    const { translations } = useLanguage();
+
     const [currentTime, setCurrentTime] = useState(new Date());
     const [activeForm, setActiveForm] = useState("contact");
     const [formData, setFormData] = useState({
@@ -65,7 +70,9 @@ const Contact = forwardRef((props, ref) => {
         e.preventDefault();
 
         if (!formData.name || !formData.email || !formData.message) {
-            toast.error("⚠️ Please fill in all fields before submitting.");
+            // toast.error("⚠️ Please fill in all fields before submitting.");
+            toast.success(translations.contactSection.formError);
+
             return;
         }
 
@@ -83,7 +90,9 @@ const Contact = forwardRef((props, ref) => {
             "rHIOrNK_gaf0FWLgF"
         )
             .then(() => {
-                toast.success("📧 Email sent successfully!");
+                // toast.success("📧 Email sent successfully!");
+                toast.success(translations.contactSection.emailSuccess);
+
                 setFormData({
                     name: "",
                     email: "",
@@ -94,7 +103,8 @@ const Contact = forwardRef((props, ref) => {
                     time: "",
                 });
             })
-            .catch(() => toast.error("❌ Failed to send email"));
+            // .catch(() => toast.error("❌ Failed to send email"));
+            .catch(() => toast.error(translations.contactSection.emailFailure));
     };
 
     //   Send WhatsApp Message for Bookings Only
@@ -104,7 +114,8 @@ const Contact = forwardRef((props, ref) => {
         e.preventDefault();
 
         if (!formData.name || !formData.email || !formData.phone || !formData.offer || !formData.date || !formData.time) {
-            toast.error("⚠️ Please fill in all fields before booking.");
+            // toast.error("⚠️ Please fill in all fields before booking.");
+            toast.error(translations.contactSection.bookingError);
             return;
         }
 
@@ -120,9 +131,10 @@ const Contact = forwardRef((props, ref) => {
         📝 Message: ${formData.message || "No additional message provided."}`;
 
         try {
-            await axios.post("http://localhost:5000/send-whatsapp", { message: whatsappMessage });
-            // await axios.post("https://nailsbyxaar-production.up.railway.app/send-whatsapp", { message: whatsappMessage });
-            toast.success("✅ WhatsApp booking request sent!");
+            // await axios.post("http://localhost:5000/send-whatsapp", { message: whatsappMessage });
+            await axios.post("https://nailsbyxaar-production.up.railway.app/send-whatsapp", { message: whatsappMessage });
+            // toast.success("✅ WhatsApp booking request sent!");
+            toast.success(translations.contactSection.whatsappSuccess);
             setFormData({
                 name: "",
                 email: "",
@@ -133,7 +145,8 @@ const Contact = forwardRef((props, ref) => {
                 time: "",
             });
         } catch (error) {
-            toast.error("❌ Failed to send WhatsApp message");
+            // toast.error("❌ Failed to send WhatsApp message");
+            toast.error(translations.contactSection.whatsappFailure);
         }
 
         setLoading(false); // ✅ Stop loading
@@ -164,21 +177,23 @@ const Contact = forwardRef((props, ref) => {
 
             {/* Sidebar */}
             <aside className={styles.sidebar}>
-                <div className={styles.logo}>Nails by Xaar</div>
+
+                <div className={styles.logo}>{translations.contactSection.logo}</div>
                 <div className={styles.sidebarContent}>
-                    <h3>We're here to help</h3>
-                    <p>Have questions about our nail services?</p>
-                    <p>Get in touch or book an appointment!</p>
+                    <h3>{translations.contactSection.helpTitle}</h3>
+                    <p>{translations.contactSection.questionsText}</p>
+                    <p>{translations.contactSection.contactOrBook}</p>
                     <div className={styles.contactInfo}>
-                        <p>123 Nail Street</p>
-                        <p>City, State 12345</p>
-                        <p>Working Hours:</p>
-                        <p><strong>Monday - Friday</strong></p>
-                        <p><span className={styles.workingTime}>9:00 AM - 6:00 PM</span></p>
-                        <p>Current Time: {formatTime(currentTime)}</p>
+                        <p>{translations.contactSection.addressLine1}</p>
+                        <p>{translations.contactSection.addressLine2}</p>
+                        <p>{translations.contactSection.workingHoursTitle}</p>
+                        <p><strong>{translations.contactSection.workingDays}</strong></p>
+                        <p><span className={styles.workingTime}>{translations.contactSection.workingTime}</span></p>
+                        <p>{translations.contactSection.currentTime}: {formatTime(currentTime)}</p>
                         <p>+1 (555) 000-0000</p>
                     </div>
                 </div>
+
                 {/* Social Icons */}
                 <div className={styles.socialIcons}>
                     <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
@@ -199,16 +214,16 @@ const Contact = forwardRef((props, ref) => {
 
             {/* Forms Section */}
             <div className={styles.formSection}>
-                <h2>Got ideas? We’ve got the skills. Let’s team up.</h2>
-                <p>Tell us more about yourself and what you’ve got in mind.</p>
+                <h2>{translations.contactSection.formTitle}</h2>
+                <p>{translations.contactSection.formDescription}</p>
 
                 {/* Toggle Buttons */}
                 <div className={styles.formToggleButtons}>
                     <button className={`${styles.toggleButton} ${activeForm === "contact" ? styles.active : ""}`} onClick={() => setActiveForm("contact")}>
-                        Comment
+                        {translations.contactSection.commentButton}
                     </button>
                     <button className={`${styles.toggleButton} ${activeForm === "booking" ? styles.active : ""}`} onClick={() => setActiveForm("booking")}>
-                        Booking
+                        {translations.contactSection.bookingButton}
                     </button>
                 </div>
 
@@ -225,26 +240,23 @@ const Contact = forwardRef((props, ref) => {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
                             <div className={styles.formGroup}>
-                                <label htmlFor="contactName">Name</label>
-                                <input type="text" id="contactName" name="name" value={formData.name} onChange={handleChange} required
-                                />
-
+                                <label htmlFor="contactName">{translations.contactSection.nameLabel}</label>
+                                <input type="text" id="contactName" name="name" value={formData.name} onChange={handleChange} required />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="contactEmail">Email</label>
+                                <label htmlFor="contactEmail">{translations.contactSection.emailLabel}</label>
                                 <input type="email" id="contactEmail" name="email" value={formData.email} onChange={handleChange} required />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="contactMessage">Message/Comment</label>
+                                <label htmlFor="contactMessage">{translations.contactSection.messageLabel}</label>
                                 <textarea id="contactMessage" name="message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
                             </div>
 
-                            <button type="submit" className={styles.submitBtn}>Submit Comment</button>
+                            <button type="submit" className={styles.submitBtn}>{translations.contactSection.submitComment}</button>
                         </motion.form>
                     )}
-
 
                     {/* Booking Form */}
                     {activeForm === "booking" && (
@@ -252,7 +264,6 @@ const Contact = forwardRef((props, ref) => {
                             key="booking"
                             className={styles.bookingForm}
                             onSubmit={handleBookingSubmit}
-
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -260,53 +271,50 @@ const Contact = forwardRef((props, ref) => {
                         >
                             <div className={styles.bookingGrid}>
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="bookingName">Name</label>
+                                    <label htmlFor="bookingName">{translations.contactSection.nameLabel}</label>
                                     <input type="text" id="bookingName" name="name" value={formData.name} onChange={handleChange} required />
                                 </div>
 
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="bookingEmail">Email</label>
+                                    <label htmlFor="bookingEmail">{translations.contactSection.emailLabel}</label>
                                     <input type="email" id="bookingEmail" name="email" value={formData.email} onChange={handleChange} required />
                                 </div>
 
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="bookingPhone">Phone Number</label>
+                                    <label htmlFor="bookingPhone">{translations.contactSection.phoneLabel}</label>
                                     <input type="tel" id="bookingPhone" name="phone" value={formData.phone} onChange={handleChange} required />
                                 </div>
 
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="bookingOffer">Choose Offer</label>
+                                    <label htmlFor="bookingOffer">{translations.contactSection.offerLabel}</label>
                                     <select id="bookingOffer" name="offer" onChange={handleChange} value={formData.offer} required>
-                                        <option value="">--Select an Offer--</option>
-                                        <option value="Gel with Color">Gel with Color</option>
-                                        <option value="French Tips">French Tips</option>
-                                        <option value="Designs & Extras">Designs & Extras</option>
+                                        <option value="">{translations.contactSection.selectOffer}</option>
+                                        <option value="Gel with Color">{translations.contactSection.gelWithColor}</option>
+                                        <option value="French Tips">{translations.contactSection.frenchTips}</option>
+                                        <option value="Designs & Extras">{translations.contactSection.designsExtras}</option>
                                     </select>
                                 </div>
 
-
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="bookingDate">Date</label>
+                                    <label htmlFor="bookingDate">{translations.contactSection.dateLabel}</label>
                                     <input type="date" id="bookingDate" name="date" value={formData.date} onChange={handleChange} required />
                                 </div>
 
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="bookingTime">Time</label>
+                                    <label htmlFor="bookingTime">{translations.contactSection.timeLabel}</label>
                                     <input type="time" id="bookingTime" name="time" value={formData.time} onChange={handleChange} required />
                                 </div>
 
                                 <div className={`${styles.formGroup} ${styles.fullWidth}`}>
-                                    <label htmlFor="bookingMessage">Message</label>
+                                    <label htmlFor="bookingMessage">{translations.contactSection.messageLabel}</label>
                                     <textarea id="bookingMessage" name="message" rows="5" value={formData.message} onChange={handleChange}></textarea>
                                 </div>
-
-
                             </div>
 
                             <button type="submit" className={styles.submitBtn} disabled={loading}>
-                                {loading ? "Sending..." : "Book Now"}
+                                {loading ? translations.contactSection.sending : translations.contactSection.bookNow}
                             </button>
-                            <p className={styles.responseMessage}>I will reply to you as soon as possible.</p>
+                            <p className={styles.responseMessage}>{translations.contactSection.replySoon}</p>
 
                         </motion.form>
                     )}

@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './footer.module.css';
 import { useLanguage } from "../../contexts/LanguageContext";
+import { Link } from 'react-router-dom';
+
+
 
 export default function Footer() {
     const { translations } = useLanguage();
@@ -45,22 +48,29 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.section}>
-                    <h6 className={styles.title}>{translations.footer.products.title}</h6>
-                    <ul className={styles.list}>
-                        {translations.footer.products.items.map((item, index) => (
+                    <h6 className={styles.title}>{translations.footer.legal.title}</h6>
+                    {/* <ul className={styles.list}>
+                        {translations.footer.legal.items.map((item, index) => (
                             <li key={index}><a href="#">{item}</a></li>
                         ))}
+                    </ul> */}
+
+                    <ul className={styles.list}>
+                        <li><Link to="/privacy-policy">{translations.footer.legal.items[2]}</Link></li>
+                        <li><Link to="/terms-and-conditions">{translations.footer.legal.items[0]}</Link></li>
+                        <li><Link to="/terms-of-service">{translations.footer.legal.items[1]}</Link></li>
                     </ul>
                 </div>
 
                 <div className={styles.section}>
                     <h6 className={styles.title}>{translations.footer.usefulLinks.title}</h6>
                     <ul className={styles.list}>
-                        {translations.footer.usefulLinks.items.map((item, index) => (
-                            <li key={index}><a href="#">{item}</a></li>
-                        ))}
+                        <li><a href="#home">{translations.footer.usefulLinks.items[0]}</a></li>
+                        <li><a href="#about">{translations.footer.usefulLinks.items[1]}</a></li>
+                        <li><a href="#services">{translations.footer.usefulLinks.items[2]}</a></li>
                     </ul>
                 </div>
+
 
                 <div className={styles.section}>
                     <h6 className={styles.title}>{translations.footer.contact.title}</h6>
@@ -80,3 +90,4 @@ export default function Footer() {
         </footer>
     );
 }
+
