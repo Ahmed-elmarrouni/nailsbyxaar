@@ -2,20 +2,23 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+The following table outlines the versions of **Nails by Xaar** that currently receive security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 5.1.x   | ✅ Actively supported with security updates |
+| 5.0.x   | ❌ No longer supported |
+| 4.0.x   | ✅ Maintained with limited security updates |
+| < 4.0   | ❌ End-of-life (EOL) |
+
+We recommend all users upgrade to the latest supported version to ensure security and stability.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability in **Nails by Xaar**, please follow these guidelines:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- **Report via Email**: Contact us at **security@nailsbyxaar.com** with details of the issue.
+- **Response Time**: We aim to acknowledge your report within **48 hours** and provide updates throughout the investigation.
+- **Disclosure Process**: If validated, we will work on a patch and notify affected users before public disclosure.
+
+We appreciate the efforts of the security community in keeping **Nails by Xaar** secure! 🚀
