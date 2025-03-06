@@ -4,8 +4,8 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import { Link } from 'react-scroll';
 
 
-const productImage = "/nails/1.jpeg";
-const modelImage = "/nails/3.jpeg";
+const productImage = "/nails/3.jpeg";
+const modelImage = "/model/img_2.jpeg";
 const img1 = "/logo/logo.png";
 
 const Main = () => {

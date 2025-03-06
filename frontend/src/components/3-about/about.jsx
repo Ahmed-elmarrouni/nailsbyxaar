@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./about.module.css";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-const profilePic = "/nails/3.jpeg";
+const profilePic = "/model/img_3.jpeg";
 
 const About = () => {
     const { translations } = useLanguage();
